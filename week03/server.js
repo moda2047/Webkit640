@@ -42,13 +42,14 @@ app.put("/todo", function (req, res) {
   let newTodo = {
     no: Number(req.body.no),
     title: req.body.title,
-    done: Boolean(req.body.done),
+    done: "true" === req.body.done,
   };
   let index = todoList.findIndex(function (item) {
     return item.no == newTodo.no;
   });
   todoList[index] = newTodo;
   console.log("PUT - /todo 요청");
+  console.log(newTodo);
   res.send(todoList);
 });
 
