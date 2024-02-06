@@ -37,36 +37,6 @@ app.post("/todo", function (req, res) {
   res.send(todoList);
 });
 
-// PUT 기능: TodoList에서 항목 내용 수정
-app.put("/todo", function (req, res) {
-  let newTodo = {
-    no: Number(req.body.no),
-    title: req.body.title,
-    done: "true" === req.body.done,
-  };
-  let index = todoList.findIndex(function (item) {
-    return item.no == newTodo.no;
-  });
-  todoList[index] = newTodo;
-  console.log("PUT - /todo 요청");
-  console.log(newTodo);
-  res.send(todoList);
-});
-
-// DELTE 기능: TodoList에서 항목 삭제
-app.delete("/todo", function (req, res) {
-  console.log("DELETE - /todo 요청", req.body.no);
-  let index = todoList.findIndex(function (item) {
-    console.log("item.no ==", item.no);
-    return item.no === Number(req.body.no);
-  });
-  console.log("index:", index);
-  if (index !== -1) {
-    todoList.splice(index, 1);
-  }
-  res.send(todoList);
-});
-
 const server = http.createServer(app);
 server.listen(port, function (e) {
   console.log("서버 실행 성공 : http://localhost:" + port);
