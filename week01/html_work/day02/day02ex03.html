@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      console.log("자바스크립트 로그");
+      alert("hello javascript world"); // 알림창
+      var user = prompt("성명을 입력하세요"); // alert과 같은 기능 그러나 외부에서 변수를 가져올 수 있음.
+      document.write(user); // 이걸로 저장된 값을 화면에 출력
+      var isOk = confirm("끝내시겠습니까?"); //이것은 yes or no
+      document.write(isOk); // true false로 찍힘.
+      if (isOk) {
+        document.body.bgColor = "yellow";
+      } else {
+        document.body.bgColor = "blue";
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

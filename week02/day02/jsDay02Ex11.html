@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var aName01 = "김길동";
+      var aName02 = "이길동";
+      var aName03 = "박길동";
+      var aName04 = "장길동";
+
+      console.dir(window);
+      for (let i = 1; i <= 4; i++) {
+        console.log(window["aName0" + i]);
+      }
+
+      var userNamePos = prompt("사용자 필드 키 입력");
+      confirm(window[userNamePos] + "가 맞습니까?");
+    </script>
+  </body>
+</html>

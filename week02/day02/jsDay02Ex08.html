@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery.js"></script>
+  </head>
+  <body>
+    <button id="btn">클릭 버튼</button>
+    <ul>
+      <li>btn1</li>
+      <li>btn2</li>
+      <li>btn3</li>
+    </ul>
+    <script>
+      $("#btn").click(function () {
+        console.log("클릭했다!");
+      });
+
+      $("ul li").click(function () {
+        console.log("li 클릭", this.innerText);
+      });
+    </script>
+  </body>
+</html>

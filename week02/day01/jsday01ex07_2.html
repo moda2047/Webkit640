@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 배열을 추출하는 함수 선언 (소스코드를 분리한다!)
+      function extractArr(arr) {
+        // 짝수만 걸러서 새 배열에 담기
+        // w3schools 참조
+        // https://www.w3schools.com/js/js_array_iteration.asp#mark_filter
+        return arr.filter(function (num) {
+          return num % 2 == 0;
+        });
+      }
+
+      // 객체(Object) 초기화 : {};
+      // 배열(Array) 초기화 : [];
+
+      // 함수에 전달 할 배열 선언
+      let originalArr = [10, 11, 12, 23, 33, 44, 55, 60, 67, 88];
+
+      // 함수 호출
+      let newArrary = extractArr(originalArr);
+      console.log("new array:", newArrary);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 서버에서 받은 JSON 데이터
+      const dataFromServer = {
+        name: "Alice",
+        age: 25,
+        isStudent: true,
+        hobbies: ["reading", "coding", "traveling"],
+        address: {
+          city: "New York",
+          zipcode: "10001",
+        },
+        pet: null,
+      };
+
+      // 클라이언트에서 JSON 데이터 사용
+      console.log(dataFromServer.name); // "Alice"
+      console.log(dataFromServer.age); // 25
+      console.log(dataFromServer.hobbies); // ["reading", "coding", "traveling"]
+      console.log(dataFromServer.address.city); // "New York"
+      console.log(dataFromServer["address"]["city"]); // "New York"
+      console.log(dataFromServer["address"].city); // "New York"
+      console.log(dataFromServer.address["city"]); // "New York"
+      console.log(dataFromServer.pet); // null
+    </script>
+  </body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TodoList</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      #todoList {
+        max-width: 300px;
+        margin: auto;
+      }
+      input {
+        width: 70%;
+      }
+      li {
+        border: 1px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="todoList">
+      <h2>Todo List</h2>
+      <input
+        type="text"
+        id="input"
+        placeholder="할 일 추가"
+        onkeydown="handleKeyPress(event)"
+      />
+      <button onclick="addList()">추가하기</button>
+      <ul id="list"></ul>
+    </div>
+
+    <script>
+      function addList() {
+        const input = document.getElementById("input");
+        const n = input.value.trim();
+
+        if (n !== "") {
+          const list = document.getElementById("list");
+          const newList = document.createElement("li");
+          newList.textContent = n;
+
+          const checkInput = document.createElement("input");
+          checkInput.type = "checkbox";
+
+          const updateButton = document.createElement("button");
+          updateButton.textContent = "수정";
+
+          const deleteButton = document.createElement("button");
+          deleteButton.textContent = "삭제";
+          deleteButton.onclick = function () {
+            list.removeChild(newList);
+          };
+          newList.appendChild(checkInput);
+          newList.appendChild(updateButton);
+          newList.appendChild(deleteButton);
+          list.appendChild(newList);
+
+          input.value = "";
+          input.focus();
+        }
+      }
+
+      function handleKeyPress(e) {
+        if (e.keyCode === 13) {
+          addList();
+        }
+      }
+    </script>
+  </body>
+</html>

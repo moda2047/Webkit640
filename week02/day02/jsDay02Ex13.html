@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class People {
+        constructor(name, phone) {
+          this.name = name;
+          this.phone = phone;
+        }
+        showInfo() {
+          console.log(this.name);
+          console.log(this.phone);
+        }
+      }
+
+      const p01 = new People("장시장", "010-8445-2047");
+      console.log(p01);
+    </script>
+  </body>
+</html>

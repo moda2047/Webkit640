@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script>
+      $(document).ready(function () {
+        var btn = $("#saveBtn");
+        var text = $("#titleInput");
+
+        btn.click(function (e) {
+          console.log(text.val());
+          console.log("버튼클릭");
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h2>Todo List</h2>
+    <input type="text" name="" id="titleInput" />
+    <button id="saveBtn">save</button>
+  </body>
+</html>

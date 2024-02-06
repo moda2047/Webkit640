@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width= divce-width, initial-scale = 1.0" />
+    <title>기본틀</title>
+  </head>
+
+  <body>
+    <h1>정수의 크기 판별</h1>
+    정수를 입력하고 enter 키를 누르면 다음 input으로 넘어갑니다.
+    <fieldset>
+      <legend>서로 다른 정수 3개 입력</legend>
+      <input type="number" id="first" />
+      <input type="number" id="second" />
+      <input type="number" id="third" />
+      <div id="rstZone"></div>
+    </fieldset>
+    <script>
+      var first = document.getElementById("first");
+      var second = document.getElementById("second");
+      var third = document.getElementById("third");
+      var result = document.querySelector("#rstZone");
+
+      console.log(first);
+      console.log(second);
+      console.log(third);
+      first.onkeydown = function (e) {
+        if (e.keyCode === 13) {
+          second.focus();
+        }
+      };
+      second.onkeydown = function (e) {
+        if (e.keyCode === 13) {
+          third.focus();
+        }
+      };
+      third.onkeydown = function (e) {
+        if (e.keyCode === 13) {
+          let f = Number(first.value);
+          let s = Number(second.value);
+          let t = Number(third.value);
+
+          let biggest = Math.max(f, s, t);
+          let middle;
+          let smallest = Math.min(f, s, t);
+          if (f != biggest || f != smallest) middle = f;
+          if (s != biggest || s != smallest) middle = s;
+          if (t != biggest || t != smallest) middle = t;
+
+          result.innerHTML = `
+                 결과 : 가장 큰 숫자는 ${biggest} 입니다.\n
+                 두번 째로 큰 숫자는 ${middle} 입니다.
+                 마지막으로 가장 작은 숫자는 ${smallest} 입니다.
+                `;
+        }
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>덧셈 계산기</h2>
+    <form action="" id="calc">
+      <input type="text" size="1" name="num1" />
+      <span>+</span>
+      <input type="text" size="1" name="num2" />
+      <input type="submit" value="=" />
+
+      <input type="text" size="1" name="res" /><br /><br />
+      <input type="reset" value="초기화" />
+    </form>
+    <script>
+      var r = document.getElementById("calc");
+      calc.onsubmit = function () {
+        event.preventDefault();
+        var rr = parseInt(r.num1.value) + parseInt(r.num2.value);
+        r.res.value = rr;
+        console.log(rr);
+      };
+    </script>
+  </body>
+</html>

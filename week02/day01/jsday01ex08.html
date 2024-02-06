@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JavaScript Function Scope and Closure Example</title>
+  </head>
+  <body>
+    <script>
+      // 클로저를 이용한 카운터 함수 정의
+      function createCounter() {
+        let count = 0;
+
+        function increment() {
+          count++;
+          console.log("현재 카운트:", count);
+        }
+
+        return increment;
+      }
+
+      // 카운터 함수 생성
+      const counter = createCounter();
+
+      // 카운터 함수 호출
+      counter(); // 출력: 현재 카운트: 1
+      counter(); // 출력: 현재 카운트: 2
+      counter(); // 출력: 현재 카운트: 3
+    </script>
+  </body>
+</html>

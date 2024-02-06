@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery.min.js"></script>
+  </head>
+  <body>
+    <h1>Hello jQueyr</h1>
+    <p>
+      <button id="changeBtn">Change Text</button>
+    </p>
+
+    <script>
+      console.log("$ === jQuery L ", $ === jQuery);
+      $(function () {
+        $("#changeBtn").click(function (e) {
+          $("h1")
+            .text("안녕 제이쿼리")
+            .css({ color: "green", backgroundColor: "orange" });
+        });
+      });
+    </script>
+  </body>
+</html>

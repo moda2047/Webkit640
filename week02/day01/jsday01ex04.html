@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>할 일 입력</h1>
+    <p>
+      할일 : <input type="text" class="title" />
+      <button id="saveBtn">SAVE</button>
+    </p>
+    <p class="resultArea">결과 :</p>
+    <script>
+      var title = document.querySelector(".title");
+      var saveBtn = document.querySelector("#saveBtn");
+
+      saveBtn.onclick = function () {
+        document.querySelector(".resultArea").innerText = title.value;
+      };
+      title.onkeydown = function (e) {
+        console.log(e);
+        if (e.key === "Enter") {
+          document.querySelector(".resultArea").innerText = title.value;
+        }
+      };
+    </script>
+  </body>
+</html>

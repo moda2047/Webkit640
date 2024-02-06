@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <style>
+      .box {
+        border: 3px solid red;
+        width: 306px;
+        height: 306px;
+        clear: both;
+      }
+      .btnLi {
+        float: left;
+      }
+      .btnUl {
+        margin: 3px;
+        padding: 3px;
+        list-style-type: none;
+      }
+      hr {
+        clear: both;
+      }
+      .oneBox {
+        float: left;
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+      }
+    </style>
+    <script>
+      class nineBox {
+        constructor(ch) {
+          this.oneBox = $(`<div class='oneBox'>${ch + 1}</div>`);
+          this.oneBox.data("ch", ch);
+        }
+        init() {
+          return this.oneBox;
+        }
+      }
+      class nineBtn {
+        constructor(ch) {
+          this.oneBtn = $(
+            `<div class='btnLi'><button onclick="changeCss(this)">${
+              ch + 1
+            }</button></div>`
+          );
+          this.oneBtn.data("ch", ch);
+          this.oneBtn.on("click", function (e) {
+            changeCss(this);
+          });
+        }
+        init() {
+          return this.oneBtn;
+        }
+      }
+      $(function () {
+        for (let i = 0; i < 9; i++) {
+          let newBox = new nineBox(i);
+          $(".box").append(newBox.init());
+        }
+      });
+
+      $(function () {
+        for (let i = 0; i < 9; i++) {
+          let newBtn = new nineBtn(i);
+          $(".btnDiv").append(newBtn.init());
+        }
+      });
+
+      function changeCss(btn) {
+        console.log($(btn).data("ch"));
+        console.log($(btn));
+        let buttonText = $(btn).text();
+        let intValue = parseInt(buttonText, 10) - 1;
+        $(".oneBox").eq(intValue).css("background-color", "beige");
+        $(btn).css("background-color", "beige");
+      }
+    </script>
+  </head>
+  <body>
+    <div class="btnDiv"></div>
+    <hr />
+    <div class="box"></div>
+  </body>
+</html>

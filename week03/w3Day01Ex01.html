@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Javascript Ajax 연습</h1>
+    <a href="data.html">data.html</a>
+
+    <hr />
+    <div id="box">여기에 data html 내용이 로드 됩니다.</div>
+
+    <button id="loadBtn">데이터 로드</button>
+    <script>
+      document.getElementById("loadBtn").onclick = function (e) {
+        let xhr = new XMLHttpRequest();
+        console.dir(xhr);
+
+        xhr.onload = function (e) {
+          console.log(xhr.responseText);
+          document.getElementById("box").innerHTML = xhr.responseText;
+        };
+        //open안의 3개의 파라미터 -> 메소드, url, async(동기/비동기, 비동기가 디폴트)
+        xhr.open("GET", "data.html", true);
+        xhr.send();
+      };
+    </script>
+  </body>
+</html>

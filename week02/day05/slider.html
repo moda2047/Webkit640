@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <style>
+      .imgslide {
+        border: 1px solid gray;
+        width: 210px;
+        height: 210px;
+        overflow: hidden;
+      }
+      .banner {
+        width: 630px;
+        height: 200px;
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+        border: 1px solid red;
+        transition: transform 0.5s ease;
+      }
+      .slide {
+        float: left;
+        width: 210px;
+        height: 210px;
+        background-color: bisque;
+        list-style-type: none;
+      }
+    </style>
+    <script>
+      $(document).ready(function () {
+        var x = 0;
+        var slideCount = $(".slide").length;
+
+        function showSlide(index) {
+          var distance = -index * 210; // li 크기만큼
+          $(".banner").css("transform", "translateX(" + distance + "px)");
+        }
+
+        //3초로 이동
+        setInterval(function () {
+          x = (x + 1) % slideCount;
+          showSlide(x);
+        }, 3000);
+      });
+    </script>
+  </head>
+  <body>
+    <div class="imgslide">
+      <ul class="banner">
+        <li class="slide"><img src="./image/사과1.jpg" />1</li>
+        <li class="slide"><img src="./image/사과2.jpg" />2</li>
+        <li class="slide"><img src="./image/사과3.jpg" />3</li>
+      </ul>
+    </div>
+  </body>
+</html>

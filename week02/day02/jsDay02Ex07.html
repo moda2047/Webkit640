@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #box {
+        position: relative;
+        width: 100px;
+        height: 100px;
+        border: 1px solid red;
+        background-color: yellow;
+        left: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="btn">시작</button>
+    <hr />
+    <div id="box">박스</div>
+
+    <script src="jsDay02Ex07.js"></script>
+    <script>
+      //   let btn = document.querySelector("#btn");
+
+      //   function move(target, callback) {
+      //     let box = document.querySelector(target);
+      //     box.callback = callback;
+      //     let x = 0;
+      //     let ref = setInterval(function () {
+      //       x += 5;
+      //       if (x >= 300) {
+      //         clearInterval(ref);
+      //         box.callback();
+      //       }
+      //       box.style.left = x + "px";
+      //     }, 30);
+      //   }
+
+      //   btn.onclick = function () {
+      //     // move 기능이 종료 되면 실행 할 일을 인자로 전달.
+      //     move("#box", function () {
+      //       this.style.backgroundColor = "green";
+      //       this.style.color = "yellow";
+      //     });
+      //   };
+    </script>
+  </body>
+</html>

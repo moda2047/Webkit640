@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function testFn(a, b, c) {
+        console.log("testFn 호출...");
+
+        console.dir(arguments[0]);
+        console.dir(arguments[1]);
+        console.dir(arguments[2]);
+
+        console.log(a, b, c);
+      }
+
+      testFn("전승기", 26, "창원시");
+    </script>
+  </body>
+</html>
