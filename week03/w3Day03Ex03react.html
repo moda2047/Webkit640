@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- React.js CDN 준비 -->
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      function Greeting() {
+        return (
+          <div>
+            <h2>즐거운 코딩시간</h2>
+          </div>
+        );  
+      }
+    </script>
+
+    <script type="text/babel">
+      function MyComponent() {
+        return (
+          <div>
+            <h1>이것은 내가 만든 컴포넌트 내용</h1>
+            <Greeting />
+          </div>
+        );
+      }
+    </script>
+
+    <script type="text/babel">
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      root.render(<MyComponent />);
+    </script>
+  </body>
+</html>
