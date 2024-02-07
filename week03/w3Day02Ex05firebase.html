@@ -8,17 +8,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Welcome to Firebase Hosting</title>
 
-    <script defer src="/__/firebase/8.9.1/firebase-app.js"></script>
-    <script defer src="/__/firebase/8.9.1/firebase-auth.js"></script>
-    <script defer src="/__/firebase/8.9.1/firebase-firestore.js"></script>
-    <script defer src="/__/firebase/8.9.1/firebase-storage.js"></script>
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+    <script
+      defer
+      src="https://www.gstatic.com/firebase/8.9.1/firebase-app.js"
+    ></script>
+    <script
+      defer
+      src="https://www.gstatic.com/firebase/8.9.1/firebase-auth.js"
+    ></script>
+
+    <script
+      defer
+      src="https://www.gstatic.com/firebase/8.9.1/firebase-storage.js"
+    ></script>
+    <script
+      defer
+      src="https://www.gstatic.com/firebase/init.js?useEmulator=true"
+    ></script>
   </head>
   <body>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         try {
           let app = firebase.app();
+          let db = firebase.firestore();
+
+          //   console.log("app : ", app);
+          //   console.log("db ", db);
+          db.collection("car")
+            .get()
+            .then((querySnapshot) => {
+              querySnapshot.forEach((doc) => {
+                const car = doc.data();
+                console.log(`${doc.id} => ${car.title}, ${car.done}`);
+              });
+            });
         } catch (e) {
           console.error(e);
           loadEl.textContent =
@@ -26,11 +50,17 @@
         }
       });
     </script>
-
-    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.2/firebase-firestore-compat.js"></script>
     <script>
       var firebaseConfig = {
         /////// --- 각자 개인 프로젝트 설정 값으로 수정.
+        apiKey: "AIzaSyBSjW8jFOx4ghZ_GywX42HMII29GDe1G7A",
+        authDomain: "myportfolio-3f7b5.firebaseapp.com",
+        projectId: "myportfolio-3f7b5",
+        storageBucket: "myportfolio-3f7b5.appspot.com",
+        messagingSenderId: "200489286930",
+        appId: "1:200489286930:web:3fe447f708be8568f307cb",
       };
       firebase.initializeApp(firebaseConfig);
     </script>
