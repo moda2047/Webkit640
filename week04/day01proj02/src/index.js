@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
+import App from "./App";
 
 // 같은 index.js 페이지 내부에 부모-자식 컴포넌트 선언
 const Child = (props) => {
@@ -39,34 +40,9 @@ const Pro123 = () => {
   );
 };
 
-const App = (props) => {
-  return (
-    <div className="col-sm-4">
-      <h3>{props.title}</h3>
-      <p>{props.content[0]}</p>
-      <p>{props.content[1]}</p>
-    </div>
-  );
-};
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <>
-    <Parent />
-    <div className="App">
-      <div className="container mt-5">
-        <div className="row">
-          <Pro123 />
-          <Pro123 />
-          <Pro123 />
-        </div>
-      </div>
-      <div className="container mt-5">
-        <div className="row">
-          <App title="Lecture" content={["22222", "11111"]} />
-          <App title="Gallery" content={["22222", "11111"]} />
-          <App title="Free Board" content={["22222", "11111"]} />
-        </div>
-      </div>
-    </div>
+    <App />
   </>
 );
