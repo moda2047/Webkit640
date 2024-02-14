@@ -1,25 +1,64 @@
 import { useEffect, useState } from "react";
 
-function Example() {
-  const [count, setCount] = useState(0);
+function MyComponent() {
+  const [inputValue, setInputValue] = useState("");
+
   useEffect(() => {
-    console.log("Component mounted");
+    console.log("1. mount ...");
+
     return () => {
-      console.log("Component unmounted");
+      console.log("3. will unmount ...");
     };
   }, []);
+
   useEffect(() => {
-    console.log("Component update");
-  }, [count]);
-  const onClickHandler = (e) => {
-    setCount(count + 1);
+    console.log("2. inputValue update ...");
+  }, [inputValue]);
+
+  const handleChange = (e) => {
+    setInputValue(e.target.value);
   };
+
+  const handleClick = (e) => {
+    console.log(inputValue);
+    setInputValue("");
+  };
+
   return (
     <>
-      <h3>Count Example</h3>
-      <p>Count: {count}</p>
-      <button onClick={onClickHandler}>증가하기</button>
+      <h2>Hello world!</h2>
+      <input type="text" value={inputValue} onChange={handleChange} />
+      <button onClick={handleClick}>확인</button>
+      <p>결과: {inputValue}</p>
     </>
+  );
+}
+
+function Example() {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    console.log("01. Component mounted");
+
+    return () => {
+      console.log("03. Component will unmount");
+    };
+  }, []);
+
+  useEffect(() => {
+    console.log("02. Component count updated");
+  }, [count]);
+
+  const handleClick = () => {
+    setCount((prevCount) => prevCount + 1);
+  };
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={handleClick}>Increment</button>
+      <MyComponent />
+    </div>
   );
 }
 
