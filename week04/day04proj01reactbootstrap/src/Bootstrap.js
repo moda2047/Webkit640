@@ -4,7 +4,7 @@ import InputGroup from "react-bootstrap/InputGroup";
 import Table from "react-bootstrap/Table";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const App = () => {
+const Bootstrap = () => {
   return (
     <div>
       <h1>Todo List</h1>
@@ -51,4 +51,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Bootstrap;
